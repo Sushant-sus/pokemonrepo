@@ -216,7 +216,7 @@ button.button-search:active {
 
 /* Card Details */
 .p-card > .details {
-	padding: 0 10px;
+	padding: 10px 10px;
 	margin-top: 40px;
 }
 .p-card > .details > span { text-transform: uppercase; font-weight: bold; }
