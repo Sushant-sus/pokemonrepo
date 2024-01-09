@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { getPokemonData, pokemonimageurl } from "../Api";
 import axios from "axios";
 const PokemonList = () => {
@@ -9,13 +9,10 @@ const PokemonList = () => {
     const [totalPages, setTotalPages] = useState(1);
     const [pokemonname, setpokemonname] = useState("");
 
-
-
-
     const fetchData = async (page) => {
         try {
-            const data = await getPokemonData(page, 50);
-            if (pokemonname != "") {
+            const data = await getPokemonData(page, 60);
+            if (pokemonname !== "") {
                 const filteredData = data.filter(pokemon => pokemon.name.toLowerCase().includes(pokemonname.toLowerCase()));
                 setPokemonData(filteredData);
                 setTotalPages(Math.ceil(filteredData.count / 10));
@@ -61,7 +58,7 @@ const PokemonList = () => {
                                 <div className="character-area">
                                     <img className="character" src={pokemonimageurl + "/" + index + ".svg"} alt="" />
                                 </div>
-                                <div class="details">
+                                <div className="details">
                                     <span className="pokemanname">{pokemon.name}</span>
                                     <h3>Type</h3>
                                     {abilitiesList}
@@ -133,3 +130,4 @@ const PokemonList = () => {
 };
 
 export default PokemonList;
+
