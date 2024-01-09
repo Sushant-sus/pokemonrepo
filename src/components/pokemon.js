@@ -30,9 +30,6 @@ const PokemonList = () => {
             setLoading(false);
         }
     };
-    const handlePageChange = (newPage) => {
-        setCurrentPage(newPage);
-    };
     async function fetchPokemonType(url) {
         try {
             const response = await axios.get(url);
@@ -53,18 +50,18 @@ const PokemonList = () => {
                 ));
 
                 return (
-                        <div className="col-12 col-lg-12 col-md-12 col-sm-12">
-                            <div className="p-card fire">
-                                <div className="character-area">
-                                    <img className="character" src={pokemonimageurl + "/" + index + ".svg"} alt="" />
-                                </div>
-                                <div className="details">
-                                    <span className="pokemanname">{pokemon.name}</span>
-                                    <h3>Type</h3>
-                                    {abilitiesList}
-                                </div>
+                    <div className="col-12 col-lg-12 col-md-12 col-sm-12">
+                        <div className="p-card fire">
+                            <div className="character-area">
+                                <img className="character" src={pokemonimageurl + "/" + index + ".svg"} alt="" />
+                            </div>
+                            <div className="details">
+                                <span className="pokemanname">{pokemon.name}</span>
+                                <h3>Type</h3>
+                                {abilitiesList}
                             </div>
                         </div>
+                    </div>
 
                 );
 
@@ -89,42 +86,29 @@ const PokemonList = () => {
 
     return (
         <>
-                <div className="content-header">
-                    <div className="logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
-                    </div>
-                    <div className="searchPokemon">
-                        <input
-                            type="text"
-                            placeholder="Search Pokemon"
-                            value={pokemonname}
-                            onChange={setPokemonNameOnInput}
-                        />
-                        <button className="button-search">
-                            <div className="button-content" onClick={submitsearch}>
-                                Search
-                            </div>
-                        </button>
-                    </div>
+            <div className="content-header">
+                <div className="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
                 </div>
-                <div className="content-main">
-                    <div className="pokemons">
-                        {pokemonData.length > 0 && <>{renderedPokemonList}</>}
-                    </div>
+                <div className="searchPokemon">
+                    <input
+                        type="text"
+                        placeholder="Search Pokemon"
+                        value={pokemonname}
+                        onChange={setPokemonNameOnInput}
+                    />
+                    <button className="button-search">
+                        <div className="button-content" onClick={submitsearch}>
+                            Search
+                        </div>
+                    </button>
                 </div>
-
-
-
-
-                <div style={{ marginTop: '10px' }}>
-                    {Array.from({ length: totalPages }, (_, i) => (
-                        <button key={i + 1} onClick={() => handlePageChange(i + 1)} style={{ margin: '2px', padding: '5px' }}>
-                            {i + 1}
-                        </button>
-                    ))}
+            </div>
+            <div className="content-main">
+                <div className="pokemons">
+                    {pokemonData.length > 0 && <>{renderedPokemonList}</>}
                 </div>
-
-
+            </div>
         </>
     );
 };
