@@ -1,0 +1,285 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*  
+  author Alexandre dos Santos Soares 
+  gitHub: https://github.com/alexandrejuk;
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #F8F5F9;
+}
+
+.content-header {
+  background: #cf2835;
+  height: 160px;
+}
+.pokemanname{
+  font-weight: bold;
+}
+
+.logo {
+  width: 200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.logo img {
+  width: 200px;
+}
+
+.searchPokemon {
+  width: 600px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.searchPokemon input {
+  background: transparent;
+  border: none;
+  padding: 16px;
+  border-bottom: solid 2px #A6131E;
+  font-size: 16px;
+  color: #fff;
+  width: 60%;
+  transition:  all 1s ease;
+  right: 0;
+  font-weight: bold;
+}
+
+.searchPokemon input::placeholder {  
+  color: #800009;
+  font-weight: bold;
+}
+
+.searchPokemon input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+button.button-search {
+  background: #fff;
+  border: 2px solid #A6131E;
+  box-shadow: 0 0 0 3px #fff;
+  cursor: pointer;
+  width: 130px;
+  border-radius: 21px;
+  padding: 4px;
+  color: #A6131E;
+  font-weight: bold;
+  transition: 0.6s;
+}
+
+button.button-search img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+button.button-search:focus {
+  outline: none;
+}
+
+.button-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button.button-search:active {
+  transform: scale(1.1);
+}
+
+.pokemons {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.pokemon {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: bold;
+  color: #A6131E;
+  display: flex;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  width: 30%;
+  height: 168px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 3px;
+  cursor:pointer;
+  min-width: 450px;
+  max-width: 450px;
+}
+
+
+.pokemon:hover {
+  border-color: #A6131E;
+}
+
+.pokemon img {
+  width: 150px;
+  height:150px
+}
+
+.pokemon-details {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.species {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4em;
+  color: #e2e2e2;
+}
+
+.species-title {
+  color: #8a8a8a;
+}
+
+.actived {
+  color: #A6131E;
+}
+
+.name-pokemon, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+
+.p-card {
+	position: relative;
+	width: 300px;
+	height: 500px;
+	background-color: #fff;
+	border-radius: 5px;
+	margin: 30px 10px;
+	color: #333;
+}
+
+/* Character Area */
+.p-card > .character-area > img.character {
+	position: absolute;
+	height: 300px;
+	top: -30px;
+	left: 50%;
+	transform: translate(-50%);
+}
+.p-card > .character-area {
+	width: 100%;
+	height: 225px;
+	background-size: cover;
+	background-position: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/* Card Details */
+.p-card > .details {
+	padding: 0 10px;
+	margin-top: 40px;
+}
+.p-card > .details > span { text-transform: uppercase; font-weight: bold; }
+
+/* Card Stats */
+.p-card > .stats {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.p-card > .stats > li {
+	display: inline-block;
+	width: 33.3333%;
+	text-align: center;
+	font-size: 14px;
+	padding: 5px 0;
+	color: #fff;
+}
+.p-card > .stats > li > h5 { margin: 0; }
+.p-card > .stats > li:hover { background-color: #fff5; }
+.p-card > .stats > li:first-of-type {
+	border-right: 1px solid #333;
+	border-bottom-left-radius: 5px;
+	margin-right: -5px;
+}
+.p-card > .stats > li:last-of-type {
+	margin-left: -5px;
+	border-left: 1px solid #333;
+	border-bottom-right-radius: 5px;
+}
+
+/* Hover Effects */
+.p-card:hover > .character-area { height: 235px; }
+.p-card:hover > .character-area > img.character {
+  height: 330px;
+  top: -45px;
+}
+.p-card:hover > .details { margin-top: 30px; }
+
+/* Mewtwo */
+.p-card.psychic { box-shadow: 0 0 25px rgba(190, 100, 255, 0.55); }
+.p-card.psychic:hover { box-shadow: 0 5px 35px rgba(190, 100, 255, 1); }
+.p-card.psychic > .details > span { color: #93c; }
+.p-card.psychic > .character-area { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Psychic.png'); }
+.p-card.psychic > .stats {
+	background: #8e2de2;
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+	background: linear-gradient(to right, #4a00e0, #8e2de2);
+}
+
+/* Charizard */
+.p-card.fire { box-shadow: 0 0 25px rgba(255, 100, 30, 0.55); }
+.p-card.fire:hover { box-shadow: 0 0 35px rgba(255, 100, 30, 1); }
+.p-card.fire > .details > span { color: #f55; }
+.p-card.fire > .character-area { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Fire.jpg'); }
+.p-card.fire > .stats {
+	background: #f12711;
+	background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+	background: linear-gradient(to right, #f5af19, #f12711);
+}
