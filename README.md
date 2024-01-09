@@ -1,3 +1,7 @@
+# Hosted site: 
+
+https://pokemon-7101f.web.app  
+
 # Pokémon Gallery
 
 This project is a single-page web application that displays various Pokémon and their types. It utilizes different React methods such as React DOM, routers, useState, useEffect, and Axios for API fetching. The PokéAPI is used as the data source.
